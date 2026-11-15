@@ -102,6 +102,7 @@ require (
 	github.com/mgechev/revive v1.17.1
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/moricho/tparallel v0.3.2
+	github.com/mrsubudei/cwrapmsg v1.1.2
 	github.com/nakabonne/nestif v0.3.1
 	github.com/nishanths/exhaustive v0.15.0
 	github.com/nishanths/predeclared v0.3.1

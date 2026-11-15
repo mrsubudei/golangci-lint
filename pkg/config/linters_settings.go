@@ -258,6 +258,7 @@ type LintersSettings struct {
 	BodyClose                BodyCloseSettings                `mapstructure:"bodyclose"`
 	CanonicalHeader          CanonicalHeaderSettings          `mapstructure:"canonicalheader"`
 	CopyLoopVar              CopyLoopVarSettings              `mapstructure:"copyloopvar"`
+	Cwrapmsg                 CwrapmsgSettings                 `mapstructure:"cwrapmsg"`
 	Cyclop                   CyclopSettings                   `mapstructure:"cyclop"`
 	Decorder                 DecorderSettings                 `mapstructure:"decorder"`
 	Depguard                 DepGuardSettings                 `mapstructure:"depguard"`
@@ -388,6 +389,11 @@ type CanonicalHeaderSettings struct {
 
 type CopyLoopVarSettings struct {
 	CheckAlias bool `mapstructure:"check-alias"`
+}
+
+type CwrapmsgSettings struct {
+	IgnoreCyrillic  bool `mapstructure:"ignore-cyrillic"`
+	CaseInsensitive bool `mapstructure:"case-insensitive"`
 }
 
 type CyclopSettings struct {

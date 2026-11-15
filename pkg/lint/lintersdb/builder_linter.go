@@ -13,6 +13,7 @@ import (
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/containedctx"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/contextcheck"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/copyloopvar"
+	"github.com/golangci/golangci-lint/v2/pkg/golinters/cwrapmsg"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/cyclop"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/decorder"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/depguard"
@@ -193,6 +194,10 @@ func (LinterBuilder) Build(cfg *config.Config) ([]*linter.Config, error) {
 			WithAutoFix().
 			WithURL("https://github.com/karamaru-alpha/copyloopvar").
 			WithNoopFallback(cfg, linter.IsGoLowerThanGo122()),
+
+		linter.NewConfig(cwrapmsg.New(&cfg.Linters.Settings.Cwrapmsg)).
+			WithSince("v2.16.0").
+			WithURL("https://github.com/mrsubudei/cwrapmsg"),
 
 		linter.NewConfig(cyclop.New(&cfg.Linters.Settings.Cyclop)).
 			WithSince("v1.37.0").

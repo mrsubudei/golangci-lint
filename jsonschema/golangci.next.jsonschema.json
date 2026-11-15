@@ -850,6 +850,7 @@
             "containedctx",
             "contextcheck",
             "copyloopvar",
+            "cwrapmsg",
             "cyclop",
             "decorder",
             "depguard",
@@ -4853,6 +4854,22 @@
             }
           }
         },
+        "cwrapmsgSettings": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ignore-cyrillic": {
+              "description": "Skip messages with cyrillic symbols.",
+              "type": "boolean",
+              "default": false
+            },
+            "case-insensitive": {
+              "description": "Compare the message with the function or method name case-insensitively.",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
         "customSettings": {
           "description": "The custom section can be used to define linter plugins to be loaded at runtime. See README of golangci-lint for more information.\nEach custom linter should have a unique name.",
           "type": "object",
@@ -5381,6 +5398,9 @@
             },
             "copyloopvar": {
               "$ref": "#/definitions/settings/definitions/copyloopvarSettings"
+            },
+            "cwrapmsg": {
+              "$ref": "#/definitions/settings/definitions/cwrapmsgSettings"
             },
             "custom":{
               "$ref": "#/definitions/settings/definitions/customSettings"

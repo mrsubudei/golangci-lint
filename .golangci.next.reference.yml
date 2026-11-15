@@ -30,6 +30,7 @@ linters:
     - containedctx
     - contextcheck
     - copyloopvar
+    - cwrapmsg
     - cyclop
     - decorder
     - depguard
@@ -148,6 +149,7 @@ linters:
     - containedctx
     - contextcheck
     - copyloopvar
+    - cwrapmsg
     - cyclop
     - decorder
     - depguard
@@ -302,6 +304,14 @@ linters:
       # Check all assigning the loop variable to another variable.
       # Default: false
       check-alias: true
+
+    cwrapmsg:
+      # Skip messages with cyrillic symbols.
+      # Default: false
+      ignore-cyrillic: true
+      # Compare the message with the function or method name case-insensitively.
+      # Default: false
+      case-insensitive: true
 
     cyclop:
       # The maximal code complexity to report.
